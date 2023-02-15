@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js dom event</title>
+</head>
+
+<body>
+
+    <h1>Dom niye khela hbe</h1>
+
+    <button onclick="console.log(3)">Click me</button>
+
+    <button onclick="document.body.style.backgroundColor= 'yellow'">yellow me</button>
+
+
+    <button onclick="makeRed()">MAKE me RED</button>
+
+
+    <button id="make-Blue">MAKE me Blue</button>
+
+
+    <button id="make-purple">MAKE me purple</button>
+
+
+
+    <button id="make-pink">MAKE me pink</button>
+
+
+    <button id="make-green">MAKE me Green</button>
+
+    <button id="make-golden">MAKE me Golden</button>
+
+
+
+
+    <script src="event.js"></script>
+
+    <script>
+
+        //option-1
+
+        function makeRed() {
+            document.body.style.backgroundColor = 'red'
+        }
+
+
+        //option-2
+
+        const makeBluebtn = document.getElementById('make-Blue');
+        makeBluebtn.onclick = makeBlue;
+
+        function makeBlue() {
+            document.body.style.backgroundColor = 'blue'
+        }
+
+
+        // option-3
+
+        const makePurplebtn = document.getElementById('make-purple')
+
+        makePurplebtn.onclick = function makePurple() {
+
+            document.body.style.backgroundColor = 'purple'
+        }
+
+        // addEvenListener
+
+
+        const pinkButton = document.getElementById('make-pink');
+
+        pinkButton.addEventListener('click', makePink)
+
+        function makePink() {
+
+            document.body.style.backgroundColor = 'pink'
+
+        }
+
+
+        const greenButton = document.getElementById('make-green');
+        greenButton.addEventListener('click', function makeGreen() {
+
+            document.body.style.backgroundColor = 'green'
+        })
+
+        const golderButton = document.getElementById('make-golden');
+
+        golderButton.addEventListener('click', function () {
+            document.body.style.backgroundColor = 'goldenrod';
+
+        })
+
+    </script>
+</body>
+
+</html>
